@@ -1,112 +1,80 @@
-# GraphRAG + AutoGen + Ollama + Chainlit UI = Local Multi-Agent RAG Superbot  
+# 🧠 Local Single AI Agent with Integrated RAG  
 
-![Graphical Abstract](https://github.com/karthik-codex/autogen_graphRAG/blob/main/images/1721017707759.jpg?raw=true)
+This repository hosts a **local AI-powered Retrieval-Augmented Generation (RAG) system** that runs entirely on your machine. It is a **single-agent AI** that retrieves information from indexed documents and enhances responses using a locally running **LLM (Llama3.2 or DeepSeek) with Nomic-Embed-Text** for embedding generation.  
 
-This application integrates GraphRAG with AutoGen agents, powered by local LLMs from Ollama, for free and offline embedding and inference. Key highlights include:
- - **Agentic-RAG:** - Integrating GraphRAG's knowledge search method with an AutoGen agent via function calling.
- - **Offline LLM Support:** - Configuring GraphRAG (local & global search) to support local models from Ollama for inference
- and embedding.
- - **Non-OpenAI Function Calling:** - Extending AutoGen to support function calling with non-OpenAI LLMs from Ollama via Lite-LLM proxy
-server.
- - **Interactive UI:** - Deploying Chainlit UI to handle continuous conversations, multi-threading, and user input settings.
+---
 
-![Main Interfacce](https://github.com/karthik-codex/autogen_graphRAG/blob/main/images/UI1.webp?raw=true)
-![Widget Settings](https://github.com/karthik-codex/autogen_graphRAG/blob/main/images/U2.webp?raw=true)
+## 📂 Folder Structure  
 
-## Useful Links 🔗
+![image](https://github.com/user-attachments/assets/84e75374-86a9-425f-820d-b2ae18f7cec9)
 
-- **Full Guide:** Microsoft's GraphRAG + AutoGen + Ollama + Chainlit = Fully Local & Free Multi-Agent RAG Superbot [Medium.com](https://medium.com/@karthik.codex/microsofts-graphrag-autogen-ollama-chainlit-fully-local-free-multi-agent-rag-superbot-61ad3759f06f) 📚
 
-## 📦 Installation and Setup Linux
+🛠 Updated Features
+- graph_rag/ → Handles Graph-based RAG operations
+- graph_rag/index.py → Contains logic for document graph indexing
+- graph_rag/index.json → Stores chunk embeddings in JSON format
+- app.py → Can generate an interactive visualization of RAG as an HTML graph
+- README.md → Will guide users on how to set up & run the system
 
-Follow these steps to set up and run AutoGen GraphRAG Local with Ollama and Chainlit UI:
 
-1. **Install LLMs:**
+---
 
-    Visit [Ollama's website](https://ollama.com/) for installation files.
+## ⚡ Features  
 
-    ```bash
-    ollama pull mistral
-    ollama pull nomic-embed-text
-    ollama pull llama3
-    ollama serve
-    ```
+✅ **Runs Locally** – No external API calls, ensuring full privacy  
+✅ **Multi-Model Support** – Choose between `Llama3.2:latest` and `DeepSeek-r1:14b` for generating responses  
+✅ **Nomic-Embed-Text** – Generates high-quality embeddings for better retrieval  
+✅ **Graph-Based RAG Visualization** – Displays indexed documents and chunks as an interactive **Graph Network**  
+✅ **Time Tracking** – Tracks retrieval, embedding, response generation, and total processing time  
 
-2. **Create conda environment and install packages:**
-    ```bash
-   conda create -n RAG_agents python=3.12
-   conda activate RAG_agents
-   git clone https://github.com/karthik-codex/autogen_graphRAG.git
-   cd autogen_graphRAG
-   pip install -r requirements.txt
-    ```    
-3. **Initiate GraphRAG root folder:**
-    ```bash
-    mkdir -p ./input
-    python -m graphrag.index --init  --root .
-    mv ./utils/settings.yaml ./
-    ```      
-4. **Replace 'embedding.py' and 'openai_embeddings_llm.py' in the GraphRAG package folder using files from Utils folder:**
-    ```bash
-    sudo find / -name openai_embeddings_llm.py
-    sudo find / -name embedding.py
-    ```      
-5. **Create embeddings and knowledge graph:**
-    ```bash
-    python -m graphrag.index --root .
-    ```         
-6. **Start Lite-LLM proxy server:**
-    ```bash
-    litellm --model ollama_chat/llama3
-    ```    
-7. **Run app:**
-    ```bash
-    chainlit run appUI.py
-    ```                
+---
 
-## 📦 Installation and Setup Windows
+## 🛠 System Requirements  
 
-Follow these steps to set up and run AutoGen GraphRAG Local with Ollama and Chainlit UI on Windows:
+To run the **Local AI Agent with RAG**, your system should have:  
 
-1. **Install LLMs:**
+- **Minimum VRAM:** **8GB** (Dedicated GPU recommended)  
+- **Supported GPUs:** NVIDIA RTX 2070 or higher (CUDA enabled)  
+- **CPU:** At least **6-core** processor for smooth inference  
+- **RAM:** **16GB+** recommended for processing large documents  
+- **Storage:** Sufficient space for storing indexed documents and embeddings  
 
-    Visit [Ollama's website](https://ollama.com/) for installation files.
+---
 
-    ```pwsh
-    ollama pull mistral
-    ollama pull nomic-embed-text
-    ollama pull llama3
-    ollama serve
-    ```
+## 🎨 Graph Visualization  
 
-2. **Create conda environment and install packages:**
-    ```pwsh
-    git clone https://github.com/karthik-codex/autogen_graphRAG.git
-    cd autogen_graphRAG
-    python -m venv venv
-    ./venv/Scripts/activate
-    pip install -r requirements.txt
-    ```    
-3. **Initiate GraphRAG root folder:**
-    ```pwsh
-    mkdir input
-    python -m graphrag.index --init  --root .
-    cp ./utils/settings.yaml ./
-    ```      
-4. **Replace 'embedding.py' and 'openai_embeddings_llm.py' in the GraphRAG package folder using files from Utils folder:**
-    ```pwsh
-    cp ./utils/openai_embeddings_llm.py .\venv\Lib\site-packages\graphrag\llm\openai\openai_embeddings_llm.py
-    cp ./utils/embedding.py .\venv\Lib\site-packages\graphrag\query\llm\oai\embedding.py 
-    ```      
-5. **Create embeddings and knowledge graph:**
-    ```pwsh
-    python -m graphrag.index --root .
-    ```         
-6. **Start Lite-LLM proxy server:**
-    ```pwsh
-    litellm --model ollama_chat/llama3
-    ```    
-7. **Run app:**
-    ```pwsh
-    chainlit run appUI.py
-    ```                
+The app generates a **graph-based visualization** of indexed documents and chunks.  
+
+🔹 **Documents** are represented as **blue nodes**  
+🔹 **Chunks** are **green nodes**, connected to their respective documents  
+🔹 **Similarity edges** are drawn between related chunks  
+
+### How to View the Graph?  
+
+1. Run `app.py` and use the sidebar option **Visualize Graph RAG**  
+2. The HTML file `graph.html` will be generated  
+3. Open `graph.html` separately in a browser  
+
+> **Note:** Uncomment and modify `app.py` as needed to enhance the visualization.  
+
+---
+
+## 🔧 Enhancements & Customization  
+
+- Adjust document **chunking strategy** in `chunking.py`  
+- Modify **retrieval strategy** in `index.py`  
+- Extend **graph visualization** in `app.py`  
+
+This project is fully customizable—build your own **private local AI agent** using RAG! 🚀  
+
+---
+
+## 📢 Contribution
+
+Pull requests and feature suggestions are welcome! 🙌  
+
+---
+
+## 📜 License  
+
+MIT License © 2025 Your Name  
