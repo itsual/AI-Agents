@@ -1,7 +1,0 @@
-streamlit
-ollama
-pyvis
-python-dotenv
-network
-Jinja2
-docling
