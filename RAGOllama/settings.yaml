@@ -1,0 +1,21 @@
+# settings.yaml
+
+# Folder where input documents are stored.
+input_folder: "input"
+
+# File where the index (embeddings and metadata) will be stored.
+index_file: "index.json"
+
+# Embedding model configuration.
+embedding:
+  model: "nomic-embed-text:latest"
+  endpoint: "http://127.0.0.1:11434/api/embeddings"
+  timeout: 15
+
+# LLM (text generation) model configuration.
+llm:
+  model: "llama3.2:latest"
+  endpoint: "http://127.0.0.1:11434/v1/completions"
+  temperature: 0.7
+  max_tokens: 256
+  timeout: 30
