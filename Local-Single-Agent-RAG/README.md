@@ -2,7 +2,7 @@
 
 This repository hosts a **local AI-powered Retrieval-Augmented Generation (RAG) system** that runs entirely on your machine. It is a **single-agent AI** that retrieves information from indexed documents and enhances responses using a locally running **LLM (Llama3.2 or DeepSeek) with Nomic-Embed-Text** for embedding generation.  
 
-![Uploading LocalRAG-1.gif…]()
+![App Snapshot](https://github.com/itsual/AI-Agents/blob/main/Local-Single-Agent-RAG/LocalRAG-1.gif)
 
 
 ---
