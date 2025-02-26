@@ -62,6 +62,43 @@ The app generates a **graph-based visualization** of indexed documents and chunk
 
 ---
 
+## Two cents
+
+Here’s a list of practical tips based on my journey building a local single-agent RAG system:
+
+1. Plan Your Workflow:  
+   Outline every step—from PDF extraction and text chunking to embedding, indexing, retrieval, and LLM response generation. A clear workflow helps you pinpoint where issues arise.
+
+2. Test Modules Independently:  
+   Before integrating, verify that each module (PDF extraction, embedding, LLM query) works in isolation. For example, test your document converter in a Jupyter Notebook to confirm it outputs the expected Markdown.
+
+3. Mind Your Data Shapes:  
+   Ensure that embeddings have consistent shapes. A shape mismatch (e.g., (1,768) vs. (1,1)) can break cosine similarity calculations. Always reshape and validate vectors before performing arithmetic operations.
+
+4. Robust Indexing:  
+   Store both the raw text and embeddings for each chunk in your index (e.g., an `index.json` file). Make sure your indexing script correctly appends new documents and handles duplicates or updates gracefully.
+
+5. Monitor Performance:  
+   Measure time for extraction, embedding, and response generation. Adding timing logs helps identify bottlenecks so you can optimize or adjust your hardware expectations.
+
+6. Graph Visualization:  
+   When visualizing your RAG graph, check that node attributes (like “group” or “label”) are consistently set. If errors arise, try simplifying the node data or handling missing attributes.
+
+7. Error Handling & Logging:  
+   Implement detailed error logging. Whether it’s a failure in document extraction, embedding generation, or graph rendering, having meaningful error messages is key to rapid troubleshooting.
+
+8. Resource Management:  
+   If you’re running inference locally, ensure your GPU resources are effectively utilized. Monitor VRAM usage and consider offloading some layers to CPU if needed.
+
+9. Prompt Engineering:  
+   Construct clear and concise prompts for the LLM. Experiment with different prompt templates to get more relevant responses.
+
+10. Iterative Development:  
+    Build incrementally. Start with a simple prototype (like a basic chatbot) before adding advanced features such as graph visualization or multi-step retrieval.
+
+
+---
+
 ## 🔧 Enhancements & Customization  
 
 - Adjust document **chunking strategy** in `chunking.py`  
