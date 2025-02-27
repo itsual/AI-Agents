@@ -10,10 +10,12 @@ A local-first, multi-agent AI system that uses Retrieval-Augmented Generation (R
 - [Overview](#overview)
 - [Features](#features)
 - [Architecture](#architecture)
+- [Folder Structure](#folder-structure)
 - [Models & Dependencies](#models--dependencies)
 - [Ollama Usage](#ollama-usage)
 - [How It Works](#how-it-works)
 - [License](#license)
+
 
 ---
 
@@ -64,7 +66,66 @@ User -> [PlannerAgent] -> [RetrievalAgent] -> [Local Index + Embeddings] | v [Re
 
 *(Optional)* **SemanticChunkAgent** is used during document ingestion to produce more contextually consistent chunks. (potential enhancements)
 
-**Repo Folder Structure**
+```mermaid
+flowchart TD
+    %% Document Upload and Indexing Process
+    A[User uploads PDF Document] --> B[PDF Extraction Module<br>Docling - Convert to Markdown]
+    B --> C[Extracted Markdown Text]
+    C --> D{Document Already<br>in index.json?}
+    D -- Yes --> E[Skip Extraction & Embedding]
+    D -- No --> F[Chunking Module<br>Fixed-Window: 1000 words, 200 overlap]
+    F --> G[Generate Chunk Embeddings<br>nomic-embed-text model]
+    G --> H[Update index.json<br>Store filename, full text, chunks & embeddings]
+    
+    %% Sidebar Option
+    S1[Sidebar Option:<br>Clear Index] -.-> H1[Delete index.json file]
+    
+    %% Chat Query Process
+    I[User submits Chat Query] --> J[Planner Agent<br>Orchestrator]
+    J --> J1{Select LLM Model}
+    J1 -- Option 1 --> J2[llama3.2:latest<br>For embedding & response]
+    J1 -- Option 2 --> J3[nomic-embed-text<br>For embedding]
+    J3 --> J4[deepseek-r1:14b<br>For response only]
+    
+    J2 --> K[Retrieval Agent]
+    J4 --> K
+    K --> K1[Generate Query Embedding]
+    K1 --> K2[Compute Cosine Similarity<br>Between query & all stored chunks]
+    K2 --> K3[Select Best Matching Chunk]
+    
+    K3 --> L[Planner Agent<br>Constructs Prompt]
+    L --> L1[Builds prompt:<br>Using the following context...]
+    
+    L1 --> M[Responder Agent<br>LLM Response Generator]
+    M --> N[Selected Local LLM<br>llama3.2:latest or deepseek-r1:14b]
+    N --> O[Generates Final Answer]
+    
+    O --> P[Display Answer to User]
+    P --> P1[Show Timing Details:<br>Retrieval Time, Embedding Time,<br>Generation Time, Total Time]
+    
+    %% Optional Graph Visualization
+    Q[User clicks Visualize Graph RAG<br>in Sidebar] --> R[Graph Builder<br>NetworkX]
+    R --> R1[Create Document Nodes]
+    R1 --> R2[Create Chunk Nodes]
+    R2 --> R3[Connect Documents to their Chunks]
+    R3 --> R4[Connect Related Chunks<br>if similarity > threshold]
+    
+    R4 --> S[Graph Visualizer<br>PyVis Network]
+    S --> T[Generate HTML Graph<br>Open separately]
+    
+    %% Styling
+    classDef agentStyle fill:#e0e0e0,stroke:#333,stroke-width:2px,color:black
+    classDef modelStyle fill:#ffff99,stroke:#333,stroke-width:1px,color:black
+    classDef timingStyle fill:#fdb,stroke:#333,stroke-width:1px,color:black
+    
+    class J,K,L,M agentStyle
+    class G,J2,J3,J4,K1,N modelStyle
+    class P1 timingStyle
+```
+
+---
+
+## Folder-Structure
 
 ![image](https://github.com/user-attachments/assets/5cbb4e58-7c44-4a87-a3dd-a6ef91ea38e1)
 
