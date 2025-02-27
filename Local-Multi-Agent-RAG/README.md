@@ -2,6 +2,8 @@
 
 A local-first, multi-agent AI system that uses Retrieval-Augmented Generation (RAG) techniques to answer questions based on your own documents. This repository demonstrates how multiple specialized agents can work together—one for retrieval, another for response generation, a planner to orchestrate them, and an optional agent for semantic chunking.
 
+![App Snapshot](https://github.com/itsual/AI-Agents/blob/main/Local-Multi-Agent-RAG/MultiAgent-1.gif)
+
 ---
 
 ## Table of Contents
