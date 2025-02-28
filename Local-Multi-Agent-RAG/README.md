@@ -165,7 +165,7 @@ Be sure to have Ollama installed, and the relevant models pulled locally (via `o
 
 1. **Document Upload**  
    - PDF is converted to Markdown via `pdf_utils`.
-   - *(Optional)* The `SemanticChunkAgent` can produce chunked text based on paragraph/sentence boundaries.
+   - *(Optional)* The `SemanticChunkAgent` can produce chunked text based on paragraph/sentence boundaries. (potential enhancement)
 
 2. **Embedding**  
    - Each chunk is embedded using a local embedding model (like `nomic-embed-text`) and stored in `index.json`.
