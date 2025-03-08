@@ -367,6 +367,66 @@ Let's clearly and directly continue from library number **29** onwards, exactly 
 |------|--------------|------------|-------------|------------------|----------------|
 | 159 | Unsloth AI | Optimization | LLM fine-tuning and inference acceleration | [GitHub](https://github.com/unslothai/unsloth) | Reduces model latency and improves efficiency |
 
+## 🧠 Decision Tree
+
+```mermaid
+graph LR;
+    A[Need an AI Library?] -->|Build or Train AI Models| B[Core LLM and Deep Learning Libraries]
+    A -->|Use AI Agents or Automate Workflows| C[Agentic AI & Orchestration Frameworks]
+    A -->|Process or Chunk Data| D[Data Processing & Chunking]
+    A -->|Generate or Handle Embeddings| E[Text Embeddings]
+    A -->|Improve Search Queries| F[Query Understanding]
+    A -->|Enhance Information Retrieval| G[Retrieval Enhancement]
+    A -->|Store and Manage Vectors| H[Vector Databases]
+    A -->|Use Graph-based Knowledge Storage| I[Knowledge Graphs]
+    A -->|Access Open-Source LLMs| J[Open LLMs Access]
+    A -->|Work with Pretrained LLMs| K[LLMs]
+    A -->|Develop AI Applications| L[Frameworks]
+    A -->|Monitor AI Models| M[Observability]
+    A -->|Automate AI Workflow Execution| N[Orchestration]
+    A -->|Evaluate AI Performance| O[Evaluation]
+    A -->|Manage MLOps and LLMOps| P[MLOps and LLMOps]
+    A -->|Deploy AI Models| Q[Deployment and Serving]
+    A -->|Validate, Clean, or Process Data| R[Data Processing, Validation & Utility Libraries]
+    A -->|Use Dev Tools for AI Development| S[Development and Utility Libraries]
+    A -->|Ensure Code Quality & Version Control| T[Code Quality, Versioning, and Automation]
+    A -->|Understand AI Model Decisions| U[Model Explainability & Feature Importance]
+    A -->|Manage Large Datasets| V[Dataset Management & ML Table Handling]
+    A -->|Optimize AI Model Performance| W[AI Model Optimization & Serving]
+    A -->|Feature Engineering & Data Versioning| X[Feature Engineering & Data Versioning]
+    A -->|Ensure Data Quality and Integrity| Y[Data Quality & Monitoring]
+    A -->|Search & Index AI Data| Z[Search & Indexing for AI]
+    A -->|Improve AI Model Performance| AA[AI Model Performance Optimization]
+
+    %% Subcategories to provide more clarity on selections
+    B -->|Train & Fine-tune LLMs| BB[Hugging Face, PyTorch, TensorFlow]
+    C -->|Multi-Agent AI Development| CC[LangChain, AutoGen, CrewAI]
+    D -->|Text Splitting & Processing| DD[LlamaHub, Instructor, unstructured.io]
+    E -->|Generate AI Embeddings| EE[BGE, SBERT, Cohere]
+    F -->|Improve Search Accuracy| FF[HyDE, Multi-query, Query Expansion]
+    G -->|Optimize Information Retrieval| GG[BGE Rerank, Cohere Rerank, DPR]
+    H -->|Efficient Vector Storage| HH[FAISS, ChromaDB, Weaviate]
+    I -->|Graph-Based AI Search| II[Neo4j, Grakn, Wikibase]
+    J -->|Run Open-Source LLMs Locally| JJ[Groq, Ollama, Hugging Face]
+    K -->|Use Pretrained LLMs for AI Apps| KK[GPT, Claude, Gemini, Mistral]
+    L -->|Develop AI Apps with Frameworks| LL[Haystack, LlamaIndex, Superlinked]
+    M -->|Monitor AI Model Performance| MM[Arize AI, LangSmith, WhyLabs]
+    N -->|Automate & Schedule AI Pipelines| NN[Beam AI, Prefect, BentoML]
+    O -->|Evaluate AI Model Performance| OO[Ragas, Giskard, TruLens]
+    P -->|Manage & Optimize MLOps Workflows| PP[MLflow, Kubeflow, Metaflow]
+    Q -->|Deploy AI Models Efficiently| QQ[FastAPI, TorchServe, Triton]
+    R -->|Data Cleaning & Processing Tools| RR[Pandas, NumPy, Pydantic]
+    S -->|AI Development Utility Libraries| SS[Typer, Click, Loguru]
+    T -->|Ensure Code Quality & Versioning| TT[Pre-commit, Bandit, Ruff]
+    U -->|Explain AI Model Decisions| UU[SHAP, Fiddler AI]
+    V -->|Manage AI Datasets & Tables| VV[MLTable, Delta Lake, LakeFS]
+    W -->|Optimize AI Models for Performance| WW[Unsloth AI, Nuclio, OpenVINO]
+    X -->|Feature Engineering for ML Models| XX[Feast, Featureform]
+    Y -->|Validate Data & Ensure Quality| YY[Great Expectations, Deepchecks]
+    Z -->|Enhance AI Search & Indexing| ZZ[pgvector, ElasticSearch, Redis]
+    AA -->|Improve AI Model Efficiency| AAA[Unsloth AI, Optimization Tools]
+```
+
 
 ## 🤝 Open for Collaboration  
 
