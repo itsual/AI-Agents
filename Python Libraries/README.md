@@ -1,4 +1,4 @@
-# 🚀 Comprehensive Python Libraries for Agentic AI, LLMs, RAG, MLOps, and LLMOps
+# 🚀 Comprehensive Developer Stack (Python Libraries) for Agentic AI, LLMs, RAG, MLOps, and LLMOps
 
 Welcome to the **Comprehensive AI, LLM, RAG, MLOps & LLMOps Library Index**! 🚀  
 
