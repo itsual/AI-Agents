@@ -8,6 +8,8 @@ This repository demonstrates an end-to-end demo that leverages the advanced Llam
 - **Interactive Analysis:** Replace previous images upon new uploads and enter custom prompts to tailor the image analysis.
 - **Cloud Compute:** Utilize Google Colab's free compute resources for running AI models, making it accessible and efficient.
 
+![Demo Output](https://github.com/itsual/AI-Agents/blob/main/LLAMA-Vision/LLAMA-Vision-Demo-1.png)
+
 ## About Llama Vision
 
 Llama Vision is a state-of-the-art computer vision model that integrates image understanding with language generation. It is designed to:
