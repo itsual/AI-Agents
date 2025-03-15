@@ -1,6 +1,8 @@
-# 🧠 Local Single AI Agent with Integrated RAG  
+# 🧠 One Stop Repo For Anything AI (AI ToolKit For Developers)
 
-This repository hosts a handon gen AI and Agentic Ai hands-on application codes
+This repository hosts a handon gen AI and Agentic Ai hands-on application codes, list of python librraies to choose, learning contents, 
+
+Keywords: AI, Gen AI, LLM, Agentic AI, AI Agents
 
 **Under construction**
 
@@ -10,7 +12,3 @@ This repository hosts a handon gen AI and Agentic Ai hands-on application codes
 Pull requests and feature suggestions are welcome! 🙌  
 
 ---
-
-## 📜 License  
-
-MIT License © 2025 Your Name  
