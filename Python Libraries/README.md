@@ -77,8 +77,6 @@ Jump directly to any section to explore the tools best suited for your **AI & ML
 | 27 | Modal | Orchestration | Cloud-based workflow orchestration | [GitHub](https://github.com/modal-labs/modal-examples) | Scalable cloud deployments |
 | 28 | Prefect Marvin | Orchestration | Intelligent workflow orchestration | [GitHub](https://github.com/PrefectHQ/prefect-marvin) | Facilitates AI-assisted workflows |
 
-Let's clearly and directly continue from library number **29** onwards, exactly following your structured table format:
-
 ## 🔪 Data Processing & Chunking
 
 | S.No | Python Library     | Category           | Description                                            | GitHub/PyPI Link                                                        | Practical Tips                          |
